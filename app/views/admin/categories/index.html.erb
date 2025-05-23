@@ -10,6 +10,19 @@
     <%= link_to "New category", new_category_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
   </div>
 
+  <div>
+    <table class="w-full table">
+      <thead>
+        <th class="border border-slate-300 p-3 text-left bg-state-50">Name</th>
+        <th class="border border-slate-300 p-3 text-left bg-state-50">Description</th> 
+        <th class="border border-slate-300 p-3 text-left bg-state-50">Actions</th>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+
   <div id="categories" class="min-w-full divide-y divide-gray-200 space-y-5">
     <% if @categories.any? %>
       <% @categories.each do |category| %>
