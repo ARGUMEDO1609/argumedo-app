@@ -15,11 +15,4 @@
     <strong class="block font-medium mb-1">Description:</strong>
     <%= category.description %>
   </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit", edit_category_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= button_to "Delete", category, method: :delete, class: "rounded-lg py-3 ml-2 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
-    <hr class="mt-6">
-  <% end %>
 </div>
