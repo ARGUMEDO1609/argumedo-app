@@ -1,18 +1,24 @@
+<div id="<%= dom_id(category) %>" class="w-full p-4 bg-white shadow-sm rounded-lg border border-gray-200">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+    
+    <!-- Imagen -->
+    <div class="flex-shrink-0 rounded-md overflow-hidden">
+      <%= category.image.present? ? image_tag(category.image, class: "w-24 h-24 object-cover rounded-md") : image_tag("https://via.placeholder.com/96", class: "w-12 h-12 object-cover rounded-md") %>
+    </div>
 
+    <!-- Información -->
+    <div class="flex-1">
+      <p class="mb-2">
+        <span class="block text-sm font-semibold text-gray-600">Name:</span>
+        <span class="text-lg font-medium text-gray-900"><%= category.name %></span>
+      </p>
 
+      <p>
+        <span class="block text-sm font-semibold text-gray-600">Description:</span>
+        <span class="text-gray-800"><%= category.description %></span>
+      </p>
+    </div>
 
-
-
-
-
-<div id="<%= dom_id category %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= category.description %>
-  </p>
+  </div>
 </div>
+
