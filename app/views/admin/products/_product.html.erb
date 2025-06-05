@@ -3,16 +3,38 @@
     <strong class="block font-medium mb-1">Name:</strong>
     <%= product.name %>
   </div>
+
   <div>
     <strong class="block font-medium mb-1">Description:</strong>
     <%= product.description %>
   </div>
+
   <div>
     <strong class="block font-medium mb-1">Price:</strong>
-    <%= product.price %>
+    <%= number_to_currency(product.price) %>
   </div>
+
+  <div>
+    <strong class="block font-medium mb-1">Images:</strong>
+    <% if product.images.attached? %>
+      <div class="flex gap-2 mb-2">
+        <% product.images.each do |image| %>
+          <%= image_tag image, class: "w-20 h-20 object-cover rounded-md" %>
+        <% end %>
+      </div>
+    <% else %>
+      <span class="text-gray-500">No images attached</span>
+    <% end %>
+  </div>
+
   <div>
     <strong class="block font-medium mb-1">Category:</strong>
-    <%= product.category_id %>
+    <%= product.category&.name || "N/A" %>
+  </div>
+
+  <div>
+    <strong class="block font-medium mb-1">Active:</strong>
+    <%= product.active ? "Yes" : "No" %>
   </div>
 </div>
+
